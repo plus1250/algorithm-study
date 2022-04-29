@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+	// 입출력	
+	Scanner in = new Scanner(System.in);
+		// 정수형 데이터 받기
+		int a = in.nextInt();
+		int b = in.nextInt();
+
+		System.out.println(a+b);
+		System.out.println(a-b);
+		System.out.println(a*b);
+		System.out.println(a/b);
+		System.out.println(a%b);
+
+		in.close(); // 스캐너 닫기
+	}
+}
