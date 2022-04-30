@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		// int형 정수 String 배열 생성
+		String[] arr = new String[sc.nextInt()];
+ 
+		// for문을 이용하여 String 배열에 OX 문자열을 각 원소에 저장
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = sc.next();
+		}
+		sc.close();
+		
+		// for문을 이용하여 sum은 변수로 선언, count는 0으로 초기화
+		for(int i = 0; i < arr.length; i++) {
+			int cnt = 0;	// 연속된 값
+			int sum = 0;	// 누적 합산 
+			
+			// 문자열 길이만큼 반복하여 해당 원소의 문자열을 charAt() 메소드를 통해 검사
+			for(int j = 0; j < arr[i].length(); j++) {
+				// O인 경우 cnt에 1 증가
+				if (arr[i].charAt(j) == 'O') {
+					cnt++;
+				// X인 경우 cnt를 0으로 초기화
+				}else {
+					cnt = 0;
+				} // sum에 cnt 값을 누적하여 계산하고 배열 원소의 문자열을 검사
+				sum += cnt;
+			}	
+			System.out.println(sum); // 출력
+		}
+	}
+}
+// O가 연속되어 입력되는 경우, 점수는 누적해서 더하고, X가 나오면 이 누적된 값은 0으로 초기화
