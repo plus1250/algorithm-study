@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int cnt = 0; // 개수
+		int n = 0; // 행 번호 (행 번호 + 1 = 분모 + 분자)
+		
+		// n에 더할 때 마다 cnt에 n을 더한다
+		while(true) {
+			n++;
+			cnt += n;
+			if(cnt >= a) { // 행 번호
+				// 짝수행이라면 오른쪽에서 왼쪽으로 가니 분자는 a - cnt + n 분모는 cnt - a + 1
+				if(n % 2 == 0) {
+					System.out.println(a - cnt + n + "/" + (cnt - a + 1));
+				// 홀수행이라면 왼쪽에서 오른쪽으로 가니 반대로
+				}else {
+					System.out.println((cnt - a + 1)+ "/" +(a - cnt + n));
+				}
+				break;
+			}
+		}
+	}
+}
