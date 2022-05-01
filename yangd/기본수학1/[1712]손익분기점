@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+ 
+ 
+		int A = in.nextInt();	// 불변 비용
+		int B = in.nextInt();	// 가변 비용
+		int C = in.nextInt(); 	// 상품 가격
+        
+//		상품 가격이 가변 비용보다 작으면 손익분기점이 존재할 수 없다
+		if (C <= B) {
+			System.out.println("-1");
+		}
+		
+//		이외의 경우 N = A/(C-B) 이기 때문에 계산해주면 됨 
+		else {
+			System.out.println((A/(C-B))+1);
+		}
+		
+		
+	}
+}
+ 
