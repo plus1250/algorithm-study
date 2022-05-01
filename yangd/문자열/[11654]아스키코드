@@ -1,0 +1,12 @@
+public class Main {
+
+	public static void main(String[] args) throws Exception {
+		
+		int a = System.in.read();
+		System.out.println(a);
+		
+		}
+	}
+
+일단 나는 문제를 보고 아스키코드를 검색해봤는데 그래서 문자마다 대응을 해줘야 하나 생각함(ㅋㅋ) 그건 아니었고.. 그냥 출력을 하면 되는 거였다 system in으로 읽어들이는 거는 처음 보는 듯 
+그런데 이걸 쓰려면 예외처리를 꼭 해줘야 한다고 한다. 
