@@ -1,0 +1,11 @@
+import java.util.Scanner;
+
+class Main { 
+	public static void main(String args[]) { 
+		Scanner sc = new Scanner(System.in); 
+		// 문자열을 문자로 변환
+		int a = sc.next().charAt(0); 
+
+		System.out.println(a); 
+	} 
+}
