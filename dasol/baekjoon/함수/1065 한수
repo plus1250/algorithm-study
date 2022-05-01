@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print(arithmeticSequence(sc.nextInt()));
+		sc.close();
+ 
+		
+	}
+	// 해당 수 보다 작거나 같은 한수의 개수를 셀 것으므로 int num을 인자로 받음
+	public static int arithmeticSequence(int num) {
+		// 한수의 개수를 셀 cnt 변수 선언
+		int cnt = 0;
+		
+		// 1 ~ 99의 경우 자체가 수열이기 때문에 리턴
+		if (num < 100) {
+			return num;
+		}
+		// 각 자릿수가 등차수열인지 확인
+		else {
+			// 100 이상의 수는 한수의 최소 갯수는 99개이므로 99로 초기화
+			cnt = 99;
+ 
+			for (int i = 100; i <= num; i++) {
+				int hun = i / 100; // 백의 자릿수
+				int ten = (i / 10) % 10; // 십의 자릿수
+				int one = i % 10;
+				
+				// 각 자릿수가 수열을 이룰 때
+				if ((hun - ten) == (ten - one)) {
+					cnt++;
+				}
+			}
+		}
+		// 한수의 개수
+		return cnt;
+	}
+}
+//an= a1 + (n-1)d
+//1 ~ 99는 모두 등차 수열, 그 자체로 수열에 속함
+//10 ~ 99는 각 자리수의 차가 공차이고 그 수 자체로 수열을 이룬다
+//100 ~ 1000은 각 자릿수를 확인 후 차례대로 차를 구해 같으면 카운트 하여 반환
