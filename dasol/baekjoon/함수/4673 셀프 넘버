@@ -1,0 +1,52 @@
+public class Main {
+	public static void main(String[] args) {
+		// 1
+		// 1부터 10000까지 d 함수로 리턴되는 수는 해당 number를 생성자로 하는 수
+		boolean[] check = new boolean[10001];
+		
+		for (int i = 1; i < 10001; i++){
+			int n = d(i);
+			// 3
+			//10000보다 작은 수
+			if(n < 10001){
+				// boolean 배열을 통해 true로 바꿈
+				check[n] = true;
+			}
+		}
+		// 4
+		StringBuilder sb = new StringBuilder();
+        
+		for (int i = 1; i < 10001; i++) {
+			// false인 인덱스만 출력
+			if (!check[i]) {
+				sb.append(i).append('\n');
+			}
+		}
+		System.out.println(sb);
+	}
+	// 2
+	// number라는 수를 받을 때 number를 생성자로 하는 수를 리턴
+	public static int d(int number){
+		// 변수 sum 선언 
+		int sum = number;
+		// 셀프 넘버를 찾기 위한 반복문
+		// 나눗셈 연산자로 10단위로 줄여 나갈 것
+		while(number != 0){
+			// 첫 째 자리수
+			sum = sum + (number % 10);
+			// 10을 나누어 첫 째 자리를 없앤다
+			number = number/10;
+		}
+		// int n이 됨
+		return sum;
+	}
+}
+d()의 메소드는 우선 들어온 수를 들어온 수 가 0이 될 때까지 sum에 저장 후 while문 실행
+
+1. number값을 10으로 나눈 나머지 값을 sum에 누적(첫번째 자리 수)
+2. 이후 두번째 값을 더하기 위해 첫번째 자리를 없애준다 (number를 10으로 나누게 되면 일의 자릿수가 사라짐)
+3. 이와같은 방식을 반복하면 각 자릿수를 누적하게 되고 그 값은 sum으로 리턴되어 n이 된다
+
+값은 생성자가 있을 땐 true
+
+생성자가 없는 셀프넘버 false를 찾기 위해 for문 사용
