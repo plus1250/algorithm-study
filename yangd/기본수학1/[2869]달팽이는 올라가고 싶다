@@ -1,0 +1,31 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
+ 
+public class Main {
+ 
+	public static void main(String[] args) throws IOException {
+ 
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+    //여기서 String으로 읽어오기 때문에
+        
+    //int로 형변환을 해준다
+		int up = Integer.parseInt(st.nextToken());
+		int down = Integer.parseInt(st.nextToken());
+		int length = Integer.parseInt(st.nextToken());
+ 
+		int day = (length - down) / (up - down);
+		if ((length - down) % (up - down) != 0)
+			day++;
+ 
+		System.out.println(day);
+	}
+}
+
+원래 아는 문제였어서 만만하게 봤더니 그렇지 않았음 
+
+주의사항
+1. Scanner로  풀이할 경우 시간초과가 된다.
+2. 그래서 BufferedReader을 사용해야 하는데 반드시 자료형 타입을 잘 보아야 한다. 
