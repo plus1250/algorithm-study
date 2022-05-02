@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int x[] = new int[3];
+		int y[] = new int[3];
+		
+		int xx, yy;
+		
+		for(int i = 0; i < 3; i ++) {
+			x[i] = sc.nextInt();
+			y[i] = sc.nextInt();
+		}
+		// x 좌표대로 같은 값이 없는 x 값 찾기
+		if(x[0] == x[1])
+			xx = x[2];
+		else if(x[0] == x[2])
+			xx = x[1];
+		else
+			xx = x[0];
+		
+		// y 좌표도 동일 
+		if(y[0] == y[1])
+			yy = x[2];
+		else if(y[0] == y[2])
+			yy = x[1];
+		else
+			yy = x[0];
+		
+		System.out.println(xx + " " + yy);
+	}
+}
