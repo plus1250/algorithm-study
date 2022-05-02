@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		// 2부터 나눠지는지 판별할 것이므로 나누는 수 2로 초기화
+		int i = 2;
+		
+		// 정수 a를 나누고 더 이상 나눌 수 없을 때(몫이 1이 될 때) while문 실행
+		while(true) {
+			if(a == 1)
+				break;
+			// a를(최초 2) i로 나누고 나눠 떨어지면 a를 i로 나눈 몫으로 바꾸고(a /= i) i 출력
+			if(a % i == 0) {
+				a /= i;
+				System.out.println(i);	
+			// a가 i로 나눠지지 않을 때(최초 2) i값을 1 높여서 검사
+			} else {
+				i++;
+			}
+		}
+	}
+}
