@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args)  {
+		
+		Scanner in = new Scanner(System.in);
+		
+		int N = in.nextInt();
+		in.close();
+	
+		int sum = Fibonacci(N);
+		System.out.println(sum);
+	
+	}
+	public static int Fibonacci(int N) {
+		if(N == 0)
+			return 0;
+		if(N ==1 || N==2)
+			return 1;
+		else 
+			return Fibonacci(N -1) + Fibonacci(N -2);
+	}
+	}
+  
+  풀었다
