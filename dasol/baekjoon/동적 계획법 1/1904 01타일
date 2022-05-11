@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main {
+	static int N;
+	static int dp[]; // 메모이제이션
+
+	public static void main(String[] args)   {
+		Scanner sc = new Scanner(System.in);
+		
+		N = sc.nextInt();
+		dp = new int[1000001];
+		dp[0] = 1;
+		dp[1] = 2;
+		dp[2] = 3;
+		for(int i = 3; i <= N; i++) {
+			dp[i] = dp[i-1] + dp[i-2]; // 점화식
+			dp[i] %= 15746; // int형 범위를 초과하기 때문에 미리 나눠준 후 저장
+		}
+		
+		System.out.println(dp[N - 1]); // 0번 인덱스부터 사용하기 때문에 -1 후 출력
+	}
+	
+}
