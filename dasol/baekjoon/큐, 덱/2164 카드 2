@@ -1,0 +1,22 @@
+import java.util.Queue;
+import java.util.LinkedList;
+import java.util.Scanner;
+ 
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Queue<Integer> q = new LinkedList<>();
+		int N = in.nextInt();
+		// 큐 입력
+		for(int i = 1; i <= N; i++) {
+			q.offer(i);
+		}
+		while(q.size() > 1) {
+			q.poll();	// 맨 앞의 값 삭제
+			q.offer(q.poll());	// 맨 앞의 값을 삭제와 동시에 버려진 값을 맨 뒤에 삽입 
+		}
+		
+		System.out.println(q.poll());	// 남은 값 출력 
+	}
+
+}
