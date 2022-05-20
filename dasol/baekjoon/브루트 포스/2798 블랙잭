@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int N = in.nextInt(); // 카드 갯수
+		int M = in.nextInt(); // 블랙잭(넘지 않고 가까워야 하는 수)
+		int sum = 0; // 세 수의 합
+		int tmp = 0; // 새로운 근사치가 나올 때까지 이전 근사치의 값
+		
+		int[] arr = new int[N];
+ 
+		for (int i = 0; i < N; i++) {
+			arr[i] = in.nextInt(); // 카드에 적힌 수
+		}
+		
+		// 탐색
+		// N만큼 반복(배열 arr을 순회)
+		for (int i = 0; i < N; i++) {
+ 
+			// i + 1번째 arr을 순회
+			for (int j = i + 1; j < N; j++) {
+ 
+				// j + 1번째 arr을 순회
+				for (int k = j + 1; k < N; k++) {
+	
+					// 세 수의 합
+					sum = arr[i] + arr[j] + arr[k];
+					
+					// 근사치(tmp)보다 크고 블랙잭보다 작거나 같으면 새로운 근사치 
+					if (tmp < sum && sum <= M) {	
+						tmp = sum;
+					}
+				}		
+			}
+		}
+		
+		// for문을 다 순회 한 후 가장 근접한 근사치는 tmp
+		System.out.println(tmp);
+	}
+	
+}
