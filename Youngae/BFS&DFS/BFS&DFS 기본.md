@@ -11,11 +11,11 @@
 
 ### 2. 깊이 우선 탐색(DFS)의 구조
 
-![11.png](BFS%20DFS%20%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%209f636e4714a1424da4623203218ad262/11.png)
+![11](https://user-images.githubusercontent.com/97429679/171026367-2410d8ef-0ed6-47c6-bed1-7f86f425ef07.png)
 
 ### 3. 깊이 우선 탐색(DFS)과 스택
 
-![12.png](BFS%20DFS%20%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%209f636e4714a1424da4623203218ad262/12.png)
+![12](https://user-images.githubusercontent.com/97429679/171026381-63f2af58-1d2b-4713-9aca-b377f0a006e5.png)
 
 | 검사 중 | 스택 |
 | --- | --- |
@@ -34,7 +34,7 @@
 
 - 미로 찾기
     
-    ![13.PNG](BFS%20DFS%20%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%209f636e4714a1424da4623203218ad262/13.png)
+    ![13](https://user-images.githubusercontent.com/97429679/171026385-99e1d4ef-6162-4392-ba4a-be86916263b8.png)
     
     - 주어진 미로가 탈출 가능한 미로라면 True, 탈출 불가능한 미로라면 False를 반환
         
@@ -116,11 +116,11 @@
 
 ### 2. 너비 우선 탐색(BFS) 구조
 
-![14.png](BFS%20DFS%20%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%209f636e4714a1424da4623203218ad262/14.png)
+![14](https://user-images.githubusercontent.com/97429679/171026391-5e11188f-8c5f-483f-bc7a-4a174f382511.png)
 
 ### 3. 너비 우선 탐색(BFS)과 큐
 
-![15.png](BFS%20DFS%20%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%209f636e4714a1424da4623203218ad262/15.png)
+![15](https://user-images.githubusercontent.com/97429679/171026394-2f485af3-a0bc-44e0-83cd-b2024aae30a7.png)
 
 | 검사 중 | 큐 |
 | --- | --- |
@@ -136,7 +136,7 @@
 
 - 최단 경로 찾기
     
-    ![16.PNG](BFS%20DFS%20%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%209f636e4714a1424da4623203218ad262/16.png)
+    ![16](https://user-images.githubusercontent.com/97429679/171026399-ff3b00a2-4e3f-41db-b11f-b6341ed760bc.png)
     
     - 1번 섬에서부터 12번 섬까지 가는 최단 경로는 얼마인가? (단, 모든 경로의 거리는 1이다.)
         
