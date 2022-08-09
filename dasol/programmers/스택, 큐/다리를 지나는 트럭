@@ -1,0 +1,39 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+class Solution {
+    public int solution(int bridge_length, int weight, int[] truck_weights) {
+        int answer = 0; // 시간
+        int sum = 0; // 다리 위에 있는 트럭의 총 무게
+
+        Queue<Integer> queue = new LinkedList<>();
+
+        for (int truck_weights : truck_weights) {
+            while (true) {
+                // 다리가 비어있는 경우
+                if (queue.isEmpty()) {
+                    queue.add(truck_weights);
+                    sum += truck_weights;
+                    answer++;
+                    break;
+                // 다리가 다 차 있는 경우
+                } else if (queue.size() == bridge_length) {
+                    sum -= queue.poll();
+                } else {
+                    // 다리가 비어있지도 다 차 있지 않고 견디는 무게보다 큰 경우
+                    if (truck_weights + sum > weight) {
+                        queue.add(0);
+                        answer++;
+                    } else {
+                        queue.add(i);
+                        sum += truck_weights;
+                        answer++;
+                        break;
+                    }
+                }
+            }
+        }
+        // 마지막으로 들어간 트럭이 다리 지나간 시간 추가
+        return answer + bridge_length;
+    }
+}
